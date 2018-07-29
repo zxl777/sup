@@ -58,7 +58,8 @@ func (sup *Stackup) Run(network *Network, envVars EnvList, commands ...*Command)
 			// Localhost client.
 			if host == "localhost" {
 				local := &LocalhostClient{
-					env: env + `export SUP_HOST="` + host + `";`,
+					// env: env + `export SUP_HOST="` + host + `";`,
+					env: env + `export SUP_HOST="` + "TEST" + `";`,
 				}
 				if err := local.Connect(host); err != nil {
 					errCh <- errors.Wrap(err, "connecting to localhost failed")
@@ -70,7 +71,8 @@ func (sup *Stackup) Run(network *Network, envVars EnvList, commands ...*Command)
 
 			// SSH client.
 			remote := &SSHClient{
-				env:   env + `export SUP_HOST="` + host + `";`,
+				// env:   env + `export SUP_HOST="` + host + `";`,
+				env:   env + `export SUP_HOST="` + "TEST2" + `";`,
 				user:  network.User,
 				color: Colors[i%len(Colors)],
 			}

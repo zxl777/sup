@@ -108,7 +108,7 @@ func (sup *Stackup) createTasks(cmd *Command, clients []Client, env string) ([]*
 		local := &LocalhostClient{
 			// env: env + `export SUP_HOST="localhost";`,
 			//env: env + `export SUP_HOST="` + host + `";`,
-			env: env + `export SUP_HOST="` + "TEST" + `";`,
+			env: env + `export SUP_HOST="` + "TEST0" + `";`,
 		}
 		local.Connect("localhost")
 		task := &Task{
